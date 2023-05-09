@@ -1,0 +1,369 @@
+/*
+Theme Name: My Practice Theme
+Author: Alex Mouler
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --main-bg: #e3f2fd;
+  /*--navbar: #c0ddf3;*/
+  --navbar: #b8d5ef;
+  --head-foot: #c7e1f7;
+  --main-text: #023359;
+  --link: #517692;
+  --link-hover: #26506e;
+  --button-link: #a5c3d8;
+}
+
+body {
+  background-color: var(--main-bg);
+  position: relative;
+  font-family: Poppins, sans-serif;
+  color: var(--main-text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Navbar - left side bar */
+
+#navbar {
+  background-color: var(--navbar);
+}
+
+#site-title {
+  color: var(--main-text);
+}
+
+#nav-links {
+  list-style: none;
+  margin-left: -32px;
+}
+
+.page-title {
+  width: 100%;
+  height: 15%;
+  background-color: var(--head-foot);
+  margin-top: 58px;
+}
+
+.page-title h1 {
+  color: var(--main-text);
+}
+
+.page-title-sticky {
+  height: 15% !important;
+}
+
+.main-wrapper {
+  height: calc(100vh - 58px);
+}
+
+.main-content {
+  min-height: 77%;
+  padding: 3rem 6rem;
+}
+
+footer {
+  width: 100%;
+  background-color: var(--head-foot);
+  height: 8%;
+}
+
+footer a {
+  text-decoration: none;
+  color: gray;
+}
+
+footer ul {
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+  }
+
+  .container-fluid,
+  .collapse {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nav-links {
+    margin-left: -100px;
+  }
+
+  .social-list {
+    margin-left: 8px !important;
+  }
+
+  .wp-block-search {
+    margin-left: -8px;
+  }
+
+  .wp-block-search__inside-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .wp-block-search__button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .page-title {
+    margin-top: 0;
+    height: 20%;
+    top: 0px;
+    position: fixed;
+    width: calc(100% - 200px);
+    transition: all 0.2s;
+    z-index: 999;
+  }
+
+  .main-wrapper {
+    position: absolute;
+    left: 200px;
+    width: calc(100% - 200px);
+    height: 100vh;
+  }
+
+  .main-content {
+    min-height: 72%;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 0.8rem;
+  }
+}
+
+/* Single posts -- content-article & comments */
+
+.meta {
+  color: var(--link);
+}
+
+.tag {
+  background-color: var(--head-foot);
+  border-radius: 5px;
+  padding: 3px;
+}
+
+#image-credit {
+  text-decoration: underline;
+}
+
+.is-type-video div {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.is-type-video div iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+iframe {
+  margin: 0 auto !important;
+}
+
+blockquote {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-left: 2px solid #434242;
+  font-size: 1.5rem;
+  padding: 1rem 0 1rem 1.5rem;
+}
+
+blockquote cite {
+  display: block;
+  font-size: 80%;
+  color: #6c757d;
+  font-style: normal;
+}
+
+blockquote cite::before {
+  content: "\2014\00A0";
+}
+
+.wp-block-table table tbody {
+  color: #212529;
+}
+
+.wp-block-table table tbody tr td {
+  border-style: solid none;
+  border-color: gray;
+}
+
+.comment-awaiting-moderation {
+  position: absolute;
+  top: 70px;
+}
+
+.comment br {
+  display: none;
+}
+
+.comment {
+  position: relative;
+  margin: 30px auto;
+}
+
+.comment-author {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.comment-author cite,
+.says {
+  position: relative;
+  top: -10px;
+}
+
+.bypostauthor cite:after {
+  content: "(Post Author)";
+  color: var(--link-hover);
+  font-style: normal;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.comment-meta {
+  max-width: 100%;
+  width: 500px;
+  font-size: 0.8rem;
+  position: relative;
+  left: 65px;
+  top: -25px;
+}
+
+.comment p {
+  background-color: var(--head-foot);
+  padding: 10px;
+}
+
+.reply {
+  background-color: var(--button-link);
+  color: var(--link);
+  padding: 10px;
+  width: min-content;
+  border-radius: 5px;
+}
+
+.depth-2,
+.depth-3 {
+  margin-left: 50px;
+}
+
+#comment {
+  height: 150px;
+}
+
+#cancel-comment-reply-link {
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+/* Archive page */
+
+h3.title a {
+  color: var(--link-hover);
+}
+
+h3.title a:hover {
+  color: var(--link);
+}
+
+.filter-widget .wp-block-heading {
+  color: var(--link-hover);
+}
+
+.wp-block-archives li,
+.wp-block-categories li {
+  color: var(--link-hover);
+}
+
+.nav-links {
+  display: flex;
+}
+
+.page-numbers {
+  border-width: 2px 1px;
+  border-style: solid;
+  border-color: var(--link);
+  padding: 8px 15px;
+  min-width: 33px;
+  text-align: center;
+}
+
+.page-numbers:first-child {
+  border-radius: 10px 0 0 10px;
+  border-width: 2px 1px 2px 2px;
+}
+
+.page-numbers:last-child {
+  border-radius: 0 10px 10px 0;
+  border-width: 2px 2px 2px 1px;
+}
+
+.page-numbers:hover {
+  background-color: var(--head-foot);
+}
+
+.nav-links .current {
+  background-color: var(--head-foot);
+}
+
+/* About Us */
+
+img:not(.avatar) {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Single cars */
+
+.car-stats {
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 32px;
+  margin-left: -33px;
+}
+
+/* Car Archive */
+
+.reset-btn {
+  min-width: max-content;
+  height: 37.6px;
+}
+
+/* 404 */
+
+#searchform div {
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+}
+
+/* NOTE:
+1. bootstrap navwalker
+*/
